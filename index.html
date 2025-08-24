@@ -1,11 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
   <title>plastr — precision plastering</title>
+  <meta name="description" content="Plasterboard installation, ceilings, repairs and high-end finishes.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7a5c2e">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/script.js"></script>
+
 </head>
-<body>
-  <h1>plastr — refined site placeholder</h1>
-  <p>This is the regenerated version. Replace images and update contact info as needed.</p>
+<body class="home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/index.html" class="brand" aria-label="plastr home">
+        <span class="brand-mark">p</span>
+        <span class="brand-text">plastr</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="/services.html">Services</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html" class="btn">Get a quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero-bleed" style="--hero:url('/images/hero.jpg')">
+      <div class="overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Plastering by Andrej & Dejan (DJ)</p>
+        <h1>Clean lines. Flawless finishes.</h1>
+        <p class="lead">High-quality plasterboard installation, ceilings & cornices, repairs and Level 5 finishing.</p>
+        <div class="cta-row">
+          <a class="btn" href="/contact.html">Start your project</a>
+          <a class="btn ghost" href="/projects.html">View projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="serif">What we do</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Plasterboard installation</h3>
+            <p>New builds & renovations — neat set-outs, crisp joints, ready for paint.</p>
+          </article>
+          <article class="card">
+            <h3>Ceilings & cornices</h3>
+            <p>Suspended ceilings, bulkheads, and sharp cornice detailing.</p>
+          </article>
+          <article class="card">
+            <h3>Repairs & patching</h3>
+            <p>Water damage, impact repairs, settlement cracks — invisible results.</p>
+          </article>
+          <article class="card">
+            <h3>Level 5 finishing</h3>
+            <p>Premium skim coating for feature lighting and high-end projects.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2 class="serif">Built on reputation</h2>
+            <p>We keep schedules tight, sites tidy, and finishes immaculate. See more on <a href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener">@drywallgangsters</a>.</p>
+            <a class="link" href="/about.html">Learn more about us →</a>
+          </div>
+          <figure class="frame">
+            <img src="/images/feature.jpg" alt="Smooth plaster finish" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand small">
+          <span class="brand-mark">p</span>
+          <span class="brand-text">plastr</span>
+        </div>
+        <p class="muted">ABN: 56 677 332 580</p>
+        <p class="muted">© <span id="year"></span> plastr. All rights reserved.</p>
+      </div>
+      <div>
+        <p class="muted"><strong>Social</strong></p>
+        <p><a href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener">Instagram @drywallgangsters</a></p>
+      </div>
+      <div>
+        <p class="muted"><strong>Contact</strong></p>
+        <p><a href="mailto:QUOTE_EMAIL@EXAMPLE.COM">QUOTE_EMAIL@EXAMPLE.COM</a></p>
+        <p class="muted">Replace with business email & phone.</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

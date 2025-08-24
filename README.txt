@@ -1,1 +1,1 @@
-Add your plastering project photos here: hero.jpg, feature.jpg, project-1.jpg etc.
+Add your photos here. Replace hero.jpg, feature.jpg, project-1.jpg, project-2.jpg, project-3.jpg.
