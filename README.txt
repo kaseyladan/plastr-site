@@ -1,0 +1,1 @@
+Add your plastering project photos here: hero.jpg, feature.jpg, project-1.jpg etc.
