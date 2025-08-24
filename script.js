@@ -25,10 +25,10 @@ if (form) {
     const phone = data.get('phone') || '';
     const message = data.get('message') || '';
     const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`;
-    const mailto = `mailto:QUOTE_EMAIL@EXAMPLE.COM?subject=${encodeURIComponent('Quote request from ' + name)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:PLASTR@OUTLOOK.COM.AU?subject=${encodeURIComponent('Quote request from ' + name)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
     if (statusEl) {
-      statusEl.textContent = 'Opening your email app… if nothing happens, email QUOTE_EMAIL@EXAMPLE.COM';
+      statusEl.textContent = 'Opening your email app… if nothing happens, email PLASTR@OUTLOOK.COM.AU';
     }
   });
 }
