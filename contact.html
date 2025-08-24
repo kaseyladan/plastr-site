@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contact — plastr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">p</span><span class="brand-text">plastr</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="site-nav" class="site-nav">
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="btn">Get a quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="sub-hero">
+      <div class="container">
+        <h1 class="serif">Get a quote</h1>
+        <p class="lead">Send plans, photos or a quick description — we’ll come back with scope and timing.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <form id="contact-form" class="contact-form">
+          <label><span class="label">Name</span><input type="text" name="name" required></label>
+          <label><span class="label">Email</span><input type="email" name="email" required></label>
+          <label><span class="label">Phone</span><input type="tel" name="phone"></label>
+          <label><span class="label">Message</span><textarea name="message" rows="6" placeholder="Tell us about the job, location, and timing." required></textarea></label>
+          <button class="btn" type="submit">Send</button>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="muted">This form opens your email app. Swap to Formspree/Netlify later if you prefer.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="brand small"><span class="brand-mark">p</span><span class="brand-text">plastr</span></div>
+      <div><p class="muted"><strong>Social</strong></p><p><a href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener">Instagram @drywallgangsters</a></p></div>
+      <div><p class="muted"><strong>Contact</strong></p><p><a href="mailto:QUOTE_EMAIL@EXAMPLE.COM">QUOTE_EMAIL@EXAMPLE.COM</a></p></div>
+    </div>
+  </footer>
+</body>
+</html>
