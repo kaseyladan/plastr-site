@@ -293,3 +293,24 @@ main{
   border-radius: 18px;
   box-shadow: var(--shadow);
 }
+/* Home hero: full-width banner image above the copy */
+.hero {
+  grid-template-columns: 1fr !important;  /* stack image then text */
+  gap: 24px;
+}
+
+.hero .media {
+  grid-column: 1 / -1;         /* span full width of the white panel */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.hero .media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 21 / 9;        /* nice, wide banner; adjust as you like */
+  object-fit: cover;
+}
+
+/* If any leftover stats markup exists anywhere, hide it as a safety net */
+.stats { display: none !important; }
