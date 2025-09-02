@@ -103,3 +103,45 @@ footer{border-top:1px solid var(--line);padding:18px 20px;color:#6b7280;text-ali
 .sidebar .nav + * ~ * {
   display: none !important;
 }
+/* === Even spacing & balanced grids (override) === */
+:root { --col-gap: 28px; }
+
+@media (min-width: 961px) {
+  /* Wider sidebar + tighter, consistent column gap */
+  .layout {
+    grid-template-columns: 360px minmax(0, 1fr);
+    column-gap: var(--col-gap);
+  }
+}
+
+/* Center the content again and unify section rhythm */
+.container { max-width: var(--maxw); margin: 0 auto; }
+main .container > section { margin-block: 28px; }
+
+/* Hero: two equal columns + consistent gap */
+.hero {
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: var(--col-gap);
+}
+.media img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* Stats: auto-fit keeps cards evenly spaced on each row */
+.stats {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--col-gap);
+}
+.stat { min-height: 110px; }
+
+/* Service cards: even rows no matter how many items */
+.cards {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--col-gap);
+}
+.card { display: flex; flex-direction: column; }
+.card .desc { flex: 1 1 auto; }
+
+/* Gallery: same idea, fills the row evenly */
+.tiles {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--col-gap);
+}
