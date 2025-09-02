@@ -252,3 +252,14 @@ main .container > section{ margin-block:28px; }
 .stats{ grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:var(--col-gap); }
 .cards{ grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--col-gap); }
 .tiles{ grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:var(--col-gap); }
+/* Centered header logo + larger size */
+.sidebar{
+  flex-direction: column;          /* stack logo above the nav */
+  align-items: center;             /* center horizontally */
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 22px;
+}
+.brand{ margin-right: 0; }
+.brand img{ height: 72px; width: auto; }  /* bump size (tweak to taste) */
+.nav{ justify-content: center; gap: 16px; } /* center the nav under the logo */
