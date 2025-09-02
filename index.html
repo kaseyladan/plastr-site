@@ -3,209 +3,261 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Plastr — About Us</title>
+  <title>Plastr — Interior Linings</title>
   <meta name="description" content="Plastr is a family-owned plastering business by brothers Andrej & Dejan (DJ), delivering precision plastering across South East Queensland for new builds and renovations." />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #111111;
-      --secondary: #fafafa;
-      --accent: #d4a017; /* brand gold */
-      --text: #222;
-      --muted: #666;
+      --bg: #ffffff;
+      --surface: #f7f7f7;
+      --line: #ececec;
+      --text: #171717;
+      --muted: #6b7280;
+      --accent: #d4a017; /* gold */
       --maxw: 1200px;
-      --radius: 10px;
-      --shadow: 0 8px 20px rgba(0,0,0,.06);
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(0,0,0,.06);
     }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--secondary); }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-    /* Top Nav */
-    header { background: #ffffff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 50; }
-    .nav { max-width: var(--maxw); margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; }
-    .logo img { display: block; height: 36px; width: auto; }
-    nav a { color: var(--text); margin-left: 22px; text-decoration: none; font-weight: 600; letter-spacing: .02em; }
-    nav a:hover { color: var(--accent); }
+    /* Layout with left sidebar */
+    .layout{display:grid;grid-template-columns:280px 1fr;min-height:100dvh}
+    @media(max-width:960px){.layout{grid-template-columns:1fr}}
+
+    /* Sidebar */
+    .sidebar{border-right:1px solid var(--line);padding:28px 22px;position:sticky;top:0;height:100dvh;display:flex;flex-direction:column;gap:20px;background:#fff}
+    @media(max-width:960px){.sidebar{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{height:40px;width:auto}
+    .nav{display:grid;gap:8px;margin:6px 0 14px}
+    .nav a{padding:10px 12px;border-radius:10px;color:#111;font-weight:600}
+    .nav a:hover{background:var(--surface)}
+    .social{display:flex;gap:10px;align-items:center;margin-top:auto}
+    .chip{font-size:12px;color:#555;border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:#fff}
+
+    /* Content wrapper */
+    main{padding:34px 28px}
+    .container{max-width:var(--maxw);margin:0 auto}
 
     /* Hero */
-    .hero { position: relative; display: grid; place-items: center; text-align: center; color: #fff; min-height: 58vh; padding: 120px 20px; background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('assets/hero.jpg') center/cover no-repeat; }
-    .hero .eyebrow { font-weight: 600; letter-spacing: .18em; font-size: 12px; text-transform: uppercase; opacity: .9; }
-    .hero h2 { font-size: clamp(36px, 6vw, 64px); margin: 10px 0 16px; letter-spacing: .08em; text-transform: uppercase; }
-    .hero p { font-size: clamp(16px, 2.3vw, 18px); max-width: 760px; margin: 0 auto; opacity: .95; }
-    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
-    .btn { appearance: none; border: 0; border-radius: var(--radius); padding: 12px 18px; font-weight: 700; letter-spacing: .02em; cursor: pointer; text-decoration: none; display: inline-block; box-shadow: var(--shadow); }
-    .btn--solid { background: #111; color: #fff; }
-    .btn--outline { background: transparent; color: #fff; border: 2px solid #fff; }
-    .btn--gold { background: var(--accent); color: #111; border-radius: 12px; font-weight: 700; width: 100%; padding: 14px 18px; }
-    .btn--solid:hover { background: #000; }
-    .btn--outline:hover { background: rgba(255,255,255,.08); }
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
+    @media(max-width:1000px){.hero{grid-template-columns:1fr;}}
+    .eyebrow{font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#888;font-size:12px}
+    .title{font-weight:800;font-size:clamp(28px,4.6vw,54px);line-height:1.1;margin:8px 0 10px}
+    .lead{color:#4b5563;max-width:720px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{display:inline-block;font-weight:700;border-radius:12px;padding:12px 16px;border:1px solid #111}
+    .btn--dark{background:#111;color:#fff}
+    .btn--ghost{background:#fff}
+    .media{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000}
+    .media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;opacity:.9}
 
-    section { max-width: var(--maxw); margin: 60px auto; padding: 0 20px; }
-    h3 { font-size: 28px; margin-bottom: 18px; letter-spacing: .02em; }
-    p { line-height: 1.65; }
+    /* Stats row */
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 6px}
+    .stat{padding:18px;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:center}
+    .stat b{font-size:22px}
 
-    /* Split section */
-    .split { display: grid; gap: 26px; grid-template-columns: 1fr; }
-    @media(min-width: 980px){ .split { grid-template-columns: 1.15fr .85fr; align-items: start; } }
+    /* Services cards */
+    .section-title{font-size:28px;margin:30px 0 16px}
+    .cards{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    @media(max-width:1000px){.cards{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.cards{grid-template-columns:1fr}}
+    .card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:18px;display:grid;gap:10px}
+    .card .k{font-weight:700}
+    .card .desc{color:var(--muted)}
 
-    .panel { background: #fff; border: 1px solid #eee; border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
-    .panel.dark { background: #111; color: #fff; }
+    /* Gallery */
+    .tiles{display:grid;gap:10px;grid-template-columns:repeat(4,1fr)}
+    @media(max-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:640px){.tiles{grid-template-columns:repeat(2,1fr)}}
+    .tile{border:1px solid var(--line);border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#e5e7eb}
 
-    ul.bullets { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-    ul.bullets li { position: relative; padding-left: 28px; }
-    ul.bullets li:before { content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 14px; border-radius: 3px; background: var(--accent); }
+    /* Testimonials */
+    .testis{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+    @media(max-width:900px){.testis{grid-template-columns:1fr}}
+    .quote{border:1px solid var(--line);border-radius:14px;background:#fff;padding:18px;box-shadow:var(--shadow)}
+    .quote b{display:block;margin-bottom:6px}
 
-    /* Gallery tiles */
-    .tiles { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
-    @media(min-width: 740px){ .tiles { grid-template-columns: repeat(3, 1fr); } }
-    .tile { aspect-ratio: 16/11; background: #ddd; border-radius: 6px; overflow: hidden; }
-    .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* Dark footer booking/contact */
+    .cta{margin-top:40px;background:#0b0b0c;color:#eee;border-top:1px solid #191919}
+    .cta .wrap{max-width:var(--maxw);margin:0 auto;padding:30px 20px;display:grid;gap:24px;grid-template-columns:1fr 420px}
+    @media(max-width:1000px){.cta .wrap{grid-template-columns:1fr}}
+    .cta .form{background:#111;border:1px solid #1f1f1f;border-radius:14px;padding:18px}
+    .field{width:100%;padding:12px 14px;border-radius:10px;background:#151515;border:1px solid #242424;color:#eaeaea;font-family:inherit}
+    .field::placeholder{color:#7b7b7b}
+    .field:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(212,160,23,.25)}
+    textarea.field{min-height:130px}
+    .btn--gold{background:var(--accent);border:0;color:#111;border-radius:12px;font-weight:800;padding:14px 16px;width:100%}
+    .cta .title{font-size:26px;margin:6px 0}
+    .meta{color:#cfcfcf}
 
-    /* Contact section — dark like screenshot */
-    .contact-band { background: #0c0c0c; color: #eee; padding: 60px 0; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; }
-    .contact-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
-
-    .contact-cards { display: grid; gap: 24px; grid-template-columns: 1fr; margin-bottom: 28px; }
-    @media(min-width: 720px){ .contact-cards { grid-template-columns: repeat(2, 1fr); } }
-    .c-item { display: grid; gap: 8px; justify-items: center; text-align: center; }
-    .c-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; color: #111; }
-    .c-title { font-weight: 700; margin-top: 8px; color: var(--accent); }
-    .c-text { color: #cfcfcf; }
-
-    .contact-heading { text-align: center; font-size: 28px; margin: 12px 0 24px; color: #fff; }
-
-    form.contact { max-width: 820px; margin: 0 auto; display: grid; gap: 14px; }
-    .dark-field { width: 100%; padding: 14px 16px; border-radius: 8px; background: #151515; border: 1px solid #222; color: #eaeaea; font-family: inherit; }
-    .dark-field::placeholder { color: #777; }
-    .dark-field:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(212,160,23,.25); }
-    textarea.dark-field { min-height: 160px; resize: vertical; }
-    .small { color: #9a9a9a; font-size: 12px; text-align: center; }
-
-    /* Floating Action Bar (sticky) */
-    .fab { position: fixed; right: 14px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; z-index: 999; }
-    .fab a { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: #111; color: #fff; text-decoration: none; border: 1px solid #000; box-shadow: var(--shadow); }
-    .fab a:hover { background: #000; }
-    .fab svg { width: 22px; height: 22px; }
-
-    footer { background: #fff; color: var(--muted); border-top: 1px solid #eee; padding: 24px 20px; text-align: center; }
+    /* Footer */
+    footer{border-top:1px solid var(--line);padding:18px 20px;color:#6b7280;text-align:center;background:#fff}
   </style>
 </head>
 <body>
-  <header>
-    <div class="nav">
-      <a href="#" class="logo" aria-label="Plastr home">
-        <img src="assets/logo-horizontal.svg" alt="Plastr — Interior Linings" height="36" />
-      </a>
-      <nav>
-        <a href="#about">About Us</a>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="assets/logo-horizontal.svg" alt="Plastr — Interior Linings" />
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#home">Home</a>
         <a href="#services">Services</a>
-        <a href="#work">Our Work</a>
+        <a href="#about">About Us</a>
+        <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </nav>
-    </div>
-  </header>
-
-  <!-- Sticky contact bar -->
-  <aside class="fab" aria-label="Quick contact">
-    <a href="tel:+61406870707" aria-label="Call Plastr">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 4.18 2 2 0 0 1 5.11 2h3a2 2 0 0 1 2 1.72 12.4 12.4 0 0 0 .7 2.57 2 2 0 0 1-.45 2.11L9 9a16 16 0 0 0 6 6l.6-1.35a2 2 0 0 1 2.11-.45 12.4 12.4 0 0 0 2.57.7A2 2 0 0 1 22 16.92z"/></svg>
-    </a>
-    <a href="mailto:plastr@outlook.com?subject=Quote%20Request%20—%20Plastr" aria-label="Email Plastr">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
-    </a>
-    <a href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener" aria-label="Drywall Gangsters on Instagram">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    </a>
-    <a href="https://instagram.com/plastr" target="_blank" rel="noopener" aria-label="Plastr on Instagram">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    </a>
-  </aside>
-
-  <section class="hero">
-    <div class="eyebrow">With proven craftsmanship across SEQ</div>
-    <h2>Plastering Suppliers & Finishers</h2>
-    <p>From Sunshine Coast to South Brisbane — new builds and renovations. Family-owned by brothers Andrej & Dejan (DJ), known online as @drywallgangsters.</p>
-    <div class="actions">
-      <a href="tel:+61406870707" class="btn btn--solid">Call Plastr</a>
-      <a href="#work" class="btn btn--outline">View Gallery</a>
-    </div>
-  </section>
-
-  <section id="about" class="split">
-    <article class="panel">
-      <h3>About Us</h3>
-      <p>Plastr is a family-owned plastering business founded by brothers <strong>Andrej</strong> and <strong>Dejan (DJ)</strong>. Known online as the <strong>@drywallgangsters</strong>, they’ve built more than just a following; they’ve built a reputation across South East Queensland for precision plastering, flawless finishes and no shortcuts.</p>
-      <p>We deliver end-to-end plastering solutions for <strong>new builds</strong> and <strong>renovations</strong>, ensuring every stage of your project is handled with care and expertise.</p>
-    </article>
-    <aside class="panel dark">
-      <img src="assets/logo-mark.svg" alt="Plastr mark" style="height:120px; width:auto; display:block; margin: 6px 0 16px;">
-      <h3 style="margin-top:0">Why Choose Plastr?</h3>
-      <ul class="bullets">
-        <li><strong>Family Owned & Operated</strong> – Andrej & DJ bring their shared passion, skill and attention to detail into every project.</li>
-        <li><strong>Skilled & Approachable</strong> – Professional, straightforward and easy to work with.</li>
-        <li><strong>Every Job Done Right</strong> – From walls and ceilings to detailed finishes, every line, joint and curve is completed with pride.</li>
-        <li><strong>Communication You Can Count On</strong> – Clear updates, no surprises and honest advice.</li>
-        <li><strong>Tidy from Start to Finish</strong> – Sites are left as clean as the finished walls.</li>
-      </ul>
+      <div class="chip">SEQ • Sunshine Coast → South Brisbane</div>
+      <div class="social">
+        <!-- phone -->
+        <a class="chip" href="tel:+61406870707">0406 870 707</a>
+        <!-- email -->
+        <a class="chip" href="mailto:plastr@outlook.com">plastr@outlook.com</a>
+      </div>
+      <div class="social">
+        <!-- IG icons -->
+        <a class="chip" href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener">@drywallgangsters</a>
+        <a class="chip" href="https://instagram.com/plastr" target="_blank" rel="noopener">@plastr</a>
+      </div>
     </aside>
-  </section>
 
-  <section id="work">
-    <h3>Our Work</h3>
-    <p>Browse a selection of recent projects. Replace placeholders below with job photos.</p>
-    <div class="tiles">
-      <div class="tile"><img src="assets/gallery-1.jpg" alt="Project 1"></div>
-      <div class="tile"><img src="assets/gallery-2.jpg" alt="Project 2"></div>
-      <div class="tile"><img src="assets/gallery-3.jpg" alt="Project 3"></div>
-      <div class="tile"><img src="assets/gallery-4.jpg" alt="Project 4"></div>
-      <div class="tile"><img src="assets/gallery-5.jpg" alt="Project 5"></div>
-      <div class="tile"><img src="assets/gallery-6.jpg" alt="Project 6"></div>
-    </div>
-  </section>
+    <!-- Main -->
+    <main>
+      <div class="container" id="home">
+        <section class="hero">
+          <div>
+            <div class="eyebrow">Family owned • Brothers behind @drywallgangsters</div>
+            <h1 class="title">Enter your build with <br/> clean lines & flawless finishes</h1>
+            <p class="lead">Plastr delivers precision plastering for <strong>new builds</strong> and <strong>renovations</strong> across South East Queensland — from Sunshine Coast to South Brisbane. No shortcuts. Just workmanship you can feel every day.</p>
+            <div class="actions">
+              <a class="btn btn--dark" href="tel:+61406870707">Call 0406 870 707</a>
+              <a class="btn btn--ghost" href="#gallery">View gallery</a>
+            </div>
 
-  <!-- CONTACT (dark, like screenshot, without address) -->
-  <section class="contact-band" id="contact">
-    <div class="contact-inner">
-      <div class="contact-cards" role="list">
-        <div class="c-item" role="listitem">
-          <div class="c-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 4.18 2 2 0 0 1 5.11 2h3a2 2 0 0 1 2 1.72 12.4 12.4 0 0 0 .7 2.57 2 2 0 0 1-.45 2.11L9 9a16 16 0 0 0 6 6l.6-1.35a2 2 0 0 1 2.11-.45 12.4 12.4 0 0 0 2.57.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div class="stats">
+              <div class="stat"><b>Family business</b><br><span class="muted">Andrej & DJ</span></div>
+              <div class="stat"><b>End‑to‑end</b><br><span class="muted">New builds • Reno</span></div>
+              <div class="stat"><b>SEQ coverage</b><br><span class="muted">Sunshine Coast → South Brisbane</span></div>
+            </div>
           </div>
-          <div class="c-title">Phone</div>
-          <div class="c-text"><a href="tel:+61406870707" style="color:#fff; text-decoration:none;">0406&nbsp;870&nbsp;707</a></div>
-        </div>
-        <div class="c-item" role="listitem">
-          <div class="c-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+          <div class="media">
+            <img src="assets/hero.jpg" alt="Plastr project hero" />
           </div>
-          <div class="c-title">Email</div>
-          <div class="c-text"><a href="mailto:plastr@outlook.com" style="color:#fff; text-decoration:none;">hello@plastr.au</a></div>
-        </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services">
+          <h2 class="section-title">What we provide</h2>
+          <div class="cards">
+            <div class="card">
+              <div class="k">New builds</div>
+              <div class="desc">Full interior linings from set‑out to final sand for a flawless paint‑ready finish.</div>
+            </div>
+            <div class="card">
+              <div class="k">Renovations</div>
+              <div class="desc">Blend new with existing: patching, straightening and seamless transitions.</div>
+            </div>
+            <div class="card">
+              <div class="k">Ceilings & cornices</div>
+              <div class="desc">Laser‑straight lines, crisp junctions and consistent reveals.</div>
+            </div>
+            <div class="card">
+              <div class="k">Feature walls & details</div>
+              <div class="desc">Niches, bulkheads and architectural details executed precisely.</div>
+            </div>
+            <div class="card">
+              <div class="k">Repairs & rectification</div>
+              <div class="desc">Insurance and builder rectification, cracks and resheets.</div>
+            </div>
+            <div class="card">
+              <div class="k">Site care & communication</div>
+              <div class="desc">Clear updates, tidy sites and reliable scheduling.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+          <h2 class="section-title">About Plastr</h2>
+          <div class="cards" style="grid-template-columns:1.2fr .8fr">
+            <div class="card">
+              <p><strong>Plastr</strong> is founded by brothers <strong>Andrej</strong> and <strong>Dejan (DJ)</strong>. Known online as <strong>@drywallgangsters</strong>, they’ve built a reputation for precision plastering, flawless finishes and no shortcuts.</p>
+              <p>We provide <strong>end‑to‑end solutions</strong> for new builds and renovations, handling every stage with care and expertise.</p>
+              <ul style="margin:0;padding-left:18px">
+                <li><strong>Family owned & operated</strong></li>
+                <li><strong>Skilled & approachable</strong> — professional, straightforward, easy to work with</li>
+                <li><strong>Every job done right</strong> — lines, joints and curves completed with pride</li>
+                <li><strong>Communication you can count on</strong> — clear updates, no surprises</li>
+                <li><strong>Tidy from start to finish</strong></li>
+              </ul>
+            </div>
+            <div class="card" style="display:grid;place-items:center">
+              <img src="assets/logo-mark.svg" alt="Plastr mark" style="height:140px;width:auto">
+            </div>
+          </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery">
+          <h2 class="section-title">Our latest work</h2>
+          <div class="tiles">
+            <div class="tile"><img src="assets/gallery-1.jpg" alt="Project 1"></div>
+            <div class="tile"><img src="assets/gallery-2.jpg" alt="Project 2"></div>
+            <div class="tile"><img src="assets/gallery-3.jpg" alt="Project 3"></div>
+            <div class="tile"><img src="assets/gallery-4.jpg" alt="Project 4"></div>
+            <div class="tile"><img src="assets/gallery-5.jpg" alt="Project 5"></div>
+            <div class="tile"><img src="assets/gallery-6.jpg" alt="Project 6"></div>
+            <div class="tile"><img src="assets/gallery-7.jpg" alt="Project 7"></div>
+            <div class="tile"><img src="assets/gallery-8.jpg" alt="Project 8"></div>
+          </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section>
+          <h2 class="section-title">What our clients say</h2>
+          <div class="testis">
+            <div class="quote"><b>Site Manager</b>“Reliable crew, excellent communication and the cleanest finishes on the job.”</div>
+            <div class="quote"><b>Homeowner</b>“They matched new walls into an old reno perfectly. Couldn’t see the joins after paint.”</div>
+          </div>
+        </section>
       </div>
 
-      <h3 class="contact-heading">Get in touch with us</h3>
+      <!-- Dark footer contact -->
+      <section class="cta" id="contact">
+        <div class="wrap">
+          <div>
+            <div class="eyebrow" style="color:#a1a1aa">Contact</div>
+            <h2 class="title">Get in touch with us</h2>
+            <p class="meta">Phone <a href="tel:+61406870707" style="color:#fff">0406 870 707</a> • Email <a href="mailto:plastr@outlook.com" style="color:#fff">plastr@outlook.com</a><br>Follow <a href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener" style="color:#fff">@drywallgangsters</a> & <a href="https://instagram.com/plastr" target="_blank" rel="noopener" style="color:#fff">@plastr</a></p>
+          </div>
+          <!-- Netlify-ready form (dark) -->
+          <form class="form" name="contact" method="POST" action="" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
+            <input class="field" type="text" name="name" placeholder="Name" required>
+            <input class="field" type="email" name="email" placeholder="Email" required>
+            <input class="field" type="text" name="subject" placeholder="Subject">
+            <textarea class="field" name="message" placeholder="Message" required></textarea>
+            <button class="btn--gold" type="submit">Send message</button>
+          </form>
+        </div>
+      </section>
 
-      <!-- Netlify-ready dark form -->
-      <form class="contact" name="contact" method="POST" action="" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
-        <input class="dark-field" type="text" name="name" placeholder="Name" required>
-        <input class="dark-field" type="email" name="email" placeholder="Email" required>
-        <input class="dark-field" type="text" name="subject" placeholder="Subject">
-        <textarea class="dark-field" name="message" placeholder="Message" required></textarea>
-        <button class="btn btn--gold" type="submit">SEND MESSAGE</button>
-        <div class="small">We use your details only to reply to your enquiry.</div>
-      </form>
-    </div>
-  </section>
+      <footer>
+        © <span id="y"></span> Plastr — Interior Linings • SEQ
+      </footer>
+    </main>
+  </div>
 
-  <footer>
-    <p>Service area: Sunshine Coast → South Brisbane • © <span id="year"></span> Plastr. All rights reserved.</p>
-  </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
