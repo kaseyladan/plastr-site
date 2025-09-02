@@ -145,3 +145,110 @@ main .container > section { margin-block: 28px; }
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--col-gap);
 }
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Plastr</title>
+  <meta name="description" content="Contact Plastr — phone 0406 870 707 or plastr@outlook.com. Enquire about new builds and renovations across SEQ." />
+  <link rel="stylesheet" href="plastr-styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><a href="index.html"><img src="assets/logo-horizontal.svg" alt="Plastr — Interior Linings"></a></div>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+      <div class="chip">SEQ • Sunshine Coast → South Brisbane</div>
+      <div class="social">
+        <a class="chip" href="tel:+61406870707">0406 870 707</a>
+        <a class="chip" href="mailto:plastr@outlook.com">plastr@outlook.com</a>
+      </div>
+      <div class="social">
+        <a class="chip" href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener">@drywallgangsters</a>
+        <a class="chip" href="https://instagram.com/plastr" target="_blank" rel="noopener">@plastr</a>
+      </div>
+    </aside>
+
+    <main>
+      <div class="container" id="contact">
+        <h1 class="title">Get in touch</h1>
+        <div class="cards" style="grid-template-columns:1fr 420px">
+          <div class="card" style="display:grid;gap:12px">
+            <div><b>Phone</b><br><a href="tel:+61406870707">0406 870 707</a></div>
+            <div><b>Email</b><br><a href="mailto:plastr@outlook.com">plastr@outlook.com</a></div>
+            <div><b>Instagram</b><br>
+              <a href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener">@drywallgangsters</a> •
+              <a href="https://instagram.com/plastr" target="_blank" rel="noopener">@plastr</a>
+            </div>
+            <p class="muted">We service Sunshine Coast to South Brisbane for new builds and renovations.</p>
+          </div>
+          <!-- Netlify-ready form -->
+          <form class="form" name="contact" method="POST" action="" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
+            <input class="field" type="text" name="name" placeholder="Name" required>
+            <input class="field" type="email" name="email" placeholder="Email" required>
+            <input class="field" type="text" name="subject" placeholder="Subject">
+            <textarea class="field" name="message" placeholder="Message" required></textarea>
+            <button class="btn--gold" type="submit">Send message</button>
+          </form>
+        </div>
+      </div>
+
+      <footer>© <span id="y"></span> Plastr — Interior Linings • SEQ</footer>
+    </main>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
+
+
+/* ===== Top-nav layout + centered page with light grey sides ===== */
+/* Light grey colour blocking on page sides */
+body{ background:#f5f6f8; }
+
+/* Collapse two-column layout; use a top header bar instead */
+.layout{ display:block; }
+
+/* Make the former sidebar a sticky top bar */
+.sidebar{
+  position:sticky; top:0; z-index:50;
+  height:auto; padding:14px 22px;
+  background:#fff; border-right:0; border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:20px;
+}
+.brand{ margin-right:auto; }
+.brand img{ height:44px; width:auto; }
+
+/* Horizontal nav */
+.nav{ display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:0; }
+.nav a{ padding:10px 14px; border-radius:8px; font-weight:700; }
+.nav a.active{ background:var(--surface); border:1px solid var(--line); }
+
+/* Remove everything that used to live below the nav (safety net) */
+.sidebar .nav ~ *{ display:none !important; }
+
+/* Center the main content on a white panel with subtle shadow */
+main{
+  max-width: var(--maxw);
+  margin: 24px auto; padding: 28px 24px 40px;
+  background:#fff; border-radius:18px; box-shadow: var(--shadow);
+}
+/* Container no longer needs its own centering */
+.container{ max-width:100%; margin:0; }
+
+/* Even spacing + balanced grids */
+:root{ --col-gap:28px; }
+.hero{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--col-gap); }
+.media img{ aspect-ratio:16/9; object-fit:cover; }
+main .container > section{ margin-block:28px; }
+.stats{ grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:var(--col-gap); }
+.cards{ grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--col-gap); }
+.tiles{ grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:var(--col-gap); }
