@@ -263,3 +263,33 @@ main .container > section{ margin-block:28px; }
 .brand{ margin-right: 0; }
 .brand img{ height: 72px; width: auto; }  /* bump size (tweak to taste) */
 .nav{ justify-content: center; gap: 16px; } /* center the nav under the logo */
+/* === Brand header colour + lighter side panels === */
+:root{
+  /* Picked to match your swatch; tweak if needed */
+  --header-bg: #D3D4E3;   /* header bar */
+  --side-bg:   #F2F3F8;   /* lighter version for page sides */
+}
+
+body{ background: var(--side-bg); }
+
+.sidebar{
+  background: var(--header-bg);
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  border-bottom: 0;               /* cleaner edge */
+}
+
+/* Active nav chip still readable on the coloured bar */
+.nav a.active{
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* Main content stays centred on a white panel */
+main{
+  max-width: var(--maxw);
+  margin: 24px auto;
+  padding: 28px 24px 40px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
