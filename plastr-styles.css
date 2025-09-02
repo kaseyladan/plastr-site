@@ -337,3 +337,26 @@ main{
 
 /* Hide any leftover 'stats' block if it still exists */
 .stats{ display:none !important; }
+/* Home hero: taller banner + centered, wider copy */
+.hero{
+  grid-template-columns: 1fr !important;   /* image then text */
+  gap: 24px;
+  text-align: center;
+}
+.hero .media{
+  grid-column: 1 / -1;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.hero .media img{
+  width: 100%;
+  height: clamp(420px, 55vh, 680px);  /* ≈ half-page; tweak 55vh up/down */
+  object-fit: cover;
+  aspect-ratio: auto;                 /* use the height above */
+}
+.hero .copy{ 
+  max-width: 980px;                   /* fewer lines of text */
+  margin: 0 auto;
+}
+.hero .actions{ justify-content: center; }
+.hero .title{ font-size: clamp(40px, 6vw, 72px); }  /* keeps it bold but wider */
