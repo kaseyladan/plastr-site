@@ -83,3 +83,23 @@ footer{border-top:1px solid var(--line);padding:18px 20px;color:#6b7280;text-ali
 .sidebar .social { 
   display: none !important;
 }
+/* === Sidebar width & content spacing overrides === */
+@media (min-width: 961px) {
+  .layout {
+    grid-template-columns: 340px 1fr;   /* wider sidebar (was 280px) */
+    column-gap: 20px;                   /* small gap between sidebar & content */
+  }
+  main {
+    padding: 24px 20px;                 /* tighten main padding */
+  }
+  .container {
+    max-width: var(--maxw);
+    margin: 0;                          /* align content to left, not centered */
+  }
+}
+
+/* If any page still has the old blocks, hide all items after the nav as a safety net */
+.sidebar .nav + *,
+.sidebar .nav + * ~ * {
+  display: none !important;
+}
