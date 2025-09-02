@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us — Plastr</title>
+  <meta name="description" content="About Plastr — family-owned plastering by brothers Andrej & Dejan (DJ). Precision plastering across South East Queensland." />
+  <link rel="stylesheet" href="plastr-styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><a href="index.html"><img src="assets/logo-horizontal.svg" alt="Plastr — Interior Linings"></a></div>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a class="active" href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="chip">SEQ • Sunshine Coast → South Brisbane</div>
+      <div class="social">
+        <a class="chip" href="tel:+61406870707">0406 870 707</a>
+        <a class="chip" href="mailto:plastr@outlook.com">plastr@outlook.com</a>
+      </div>
+      <div class="social">
+        <a class="chip" href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener">@drywallgangsters</a>
+        <a class="chip" href="https://instagram.com/plastr" target="_blank" rel="noopener">@plastr</a>
+      </div>
+    </aside>
+
+    <main>
+      <div class="container">
+        <h1 class="title">About Plastr</h1>
+        <div class="cards" style="grid-template-columns:1.2fr .8fr">
+          <div class="card">
+            <p><strong>Plastr</strong> is a family‑owned plastering business founded by brothers <strong>Andrej</strong> and <strong>Dejan (DJ)</strong>. Known online as <strong>@drywallgangsters</strong>, they’ve built more than just a following; they’ve built a reputation across South East Queensland for precision plastering, flawless finishes and no shortcuts.</p>
+            <p>We deliver <strong>end‑to‑end plastering solutions</strong> for <strong>new builds</strong> and <strong>renovations</strong>, ensuring every stage of your project is handled with care and expertise.</p>
+            <ul style="margin:0;padding-left:18px">
+              <li><strong>Family owned & operated</strong></li>
+              <li><strong>Skilled & approachable</strong> — professional, straightforward, easy to work with</li>
+              <li><strong>Every job done right</strong> — lines, joints and curves completed with pride</li>
+              <li><strong>Communication you can count on</strong> — clear updates, no surprises</li>
+              <li><strong>Tidy from start to finish</strong></li>
+            </ul>
+          </div>
+          <div class="card" style="display:grid;place-items:center">
+            <img src="assets/logo-mark.svg" alt="Plastr mark" style="height:160px;width:auto">
+          </div>
+        </div>
+
+        <h2 class="section-title">Service area</h2>
+        <div class="cards" style="grid-template-columns:1fr 1fr 1fr">
+          <div class="card"><div class="k">Sunshine Coast</div><div class="desc">From Caloundra north — new builds & renovations.</div></div>
+          <div class="card"><div class="k">North Brisbane</div><div class="desc">From Caboolture through to the northern suburbs.</div></div>
+          <div class="card"><div class="k">South Brisbane</div><div class="desc">Across Brisbane’s southside and surrounds.</div></div>
+        </div>
+      </div>
+
+      <footer>© <span id="y"></span> Plastr — Interior Linings • SEQ</footer>
+    </main>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
