@@ -1,49 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-AU">
 <head>
-  <meta charset="utf-8" />
-  <title>About — plastr</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand"><span class="brand-mark">p</span><span class="brand-text">plastr</span></a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">☰</button>
-      <nav id="site-nav" class="site-nav">
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="btn">Get a quote</a>
-      </nav>
-    </div>
-  </header>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plastr — About Us</title>
+<meta name="description" content="Plastr is a family‑owned plastering business by brothers Andrej & Dejan (DJ), delivering precision plastering across South East Queensland for new builds and renovations." />
 
-  <main id="main">
-    <section class="sub-hero">
-      <div class="container">
-        <h1 class="serif">About</h1>
-        <p class="lead">plastr is run by brothers Andrej &amp; Dejan (DJ) — trusted for precision plastering and clean finishes.</p>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <p>We’ve built our reputation the straightforward way: do the job right, communicate clearly, and leave every site tidy. From residential renovations to commercial fit-outs, we take pride in every wall, joint and ceiling line.</p>
-        <p>See our results on Instagram <a href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener">@drywallgangsters</a>.</p>
-      </div>
-    </section>
-  </main>
+<!-- Open Graph / Social -->
+<meta property="og:title" content="Plastr — About Us" />
+<meta property="og:description" content="Family‑owned plastering by brothers Andrej & Dejan (DJ). Precision plastering, flawless finishes, no shortcuts. SEQ: Sunshine Coast to South Brisbane." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="brand small"><span class="brand-mark">p</span><span class="brand-text">plastr</span></div>
-      <div><p class="muted"><strong>Social</strong></p><p><a href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener">Instagram @drywallgangsters</a></p></div>
-      <div><p class="muted"><strong>Contact</strong></p><p><a href="mailto:QUOTE_EMAIL@EXAMPLE.COM">QUOTE_EMAIL@EXAMPLE.COM</a></p></div>
-    </div>
-  </footer>
-</body>
-</html>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<!-- Favicon (replace with your own /favicon.svg or .ico) -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+
+<style>
+:root {
+--bg: #0b0d10;
+--surface: #13161b;
+--text: #eaf0f7;
+--muted: #a9b3c0;
+--brand: #8ec5ff;
+--brand-2: #4aa3ff;
+--accent: #c2f970;
+--maxw: 1100px;
+--radius: 18px;
+--shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+margin: 0; background: radial-gradient(1200px 800px at 20% -10%, rgba(74,163,255,.12), transparent 60%),
+radial-gradient(900px 600px at 100% 20%, rgba(194,249,112,.08), transparent 60%),
+var(--bg);
+color: var(--text); font: 16px/1.6 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+a { color: var(--brand-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 28px 20px; }
+
+
+/* Header */
+header {
+position: sticky; top: 0; z-index: 10;
+background: rgba(11,13,16,.6); backdrop-filter: blur(10px);
+border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand h1 { margin: 0; font-weight: 700; letter-spacing: .3px; }
+.badge { font-size: 12px; color: var(--muted); background: rgba(255,255,255,.06); padding: 4px 8px; border-radius: 999px; }
+
+
+.btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+display: inline-flex; align-items: center; gap: 8px;
+border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 10px 14px;
+background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+color: var(--text); text-decoration: none; font-weight: 600; box-shadow: var(--shadow);
+}
+.btn:hover { border-color: rgba(255,255,255,.2); transform: translateY(-1px); }
+
+
+/* Hero */
+.hero { padding: 56px 0 10px; }
+.kicker { color: var(--brand); font-weight: 600; letter-spacing: .2px; text-transform: uppercase; font-size: 12px; }
+.title { font-size: clamp(28px, 4.6vw, 48px); line-height: 1.1; margin: 8px 0 12px; font-weight: 800; }
