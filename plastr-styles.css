@@ -314,3 +314,26 @@ main{
 
 /* If any leftover stats markup exists anywhere, hide it as a safety net */
 .stats { display: none !important; }
+/* Hero: full-width banner, taller, centered copy underneath */
+.hero{
+  grid-template-columns: 1fr !important;  /* stack image then text */
+  gap: 24px;
+  text-align: center;
+}
+.hero > :not(.media){ max-width: 760px; margin: 0 auto; } /* center text block */
+.hero .actions{ justify-content: center; }
+
+.hero .media{
+  grid-column: 1 / -1;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.hero .media img{
+  width: 100%;
+  height: clamp(360px, 46vw, 560px);  /* adjust height to reach down near “What we provide” */
+  object-fit: cover;
+  aspect-ratio: auto;
+}
+
+/* Hide any leftover 'stats' block if it still exists */
+.stats{ display:none !important; }
