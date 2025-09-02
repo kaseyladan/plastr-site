@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>plastr — About Us</title>
+  <meta name="description" content="plastr is a family-owned plastering business by brothers Andrej & Dejan (DJ), delivering precision plastering across South East Queensland for new builds and renovations." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #111111;
+      --secondary: #fafafa;
+      --accent: #d4a017; /* change to your brand accent if needed */
+      --text: #222;
+      --muted: #666;
+      --maxw: 1200px;
+      --radius: 10px;
+      --shadow: 0 8px 20px rgba(0,0,0,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--secondary); }
+
+    /* Top Nav */
+    header { background: #ffffff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 50; }
+    .nav { max-width: var(--maxw); margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo img { display: block; height: 36px; width: auto; }
+    nav a { color: var(--text); margin-left: 22px; text-decoration: none; font-weight: 600; letter-spacing: .02em; }
+    nav a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero { position: relative; display: grid; place-items: center; text-align: center; color: #fff; min-height: 58vh; padding: 120px 20px; background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('assets/hero.jpg') center/cover no-repeat; }
+    .hero .eyebrow { font-weight: 600; letter-spacing: .18em; font-size: 12px; text-transform: uppercase; opacity: .9; }
+    .hero h2 { font-size: clamp(36px, 6vw, 64px); margin: 10px 0 16px; letter-spacing: .08em; text-transform: uppercase; }
+    .hero p { font-size: clamp(16px, 2.3vw, 18px); max-width: 760px; margin: 0 auto; opacity: .95; }
+    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+    .btn { appearance: none; border: 0; border-radius: var(--radius); padding: 12px 18px; font-weight: 700; letter-spacing: .02em; cursor: pointer; text-decoration: none; display: inline-block; box-shadow: var(--shadow); }
+    .btn--solid { background: #111; color: #fff; }
+    .btn--outline { background: transparent; color: #fff; border: 2px solid #fff; }
+    .btn--solid:hover { background: #000; }
+    .btn--outline:hover { background: rgba(255,255,255,.08); }
+
+    section { max-width: var(--maxw); margin: 60px auto; padding: 0 20px; }
+    h3 { font-size: 28px; margin-bottom: 18px; letter-spacing: .02em; }
+    p { line-height: 1.65; }
+
+    /* Split section */
+    .split { display: grid; gap: 26px; grid-template-columns: 1fr; }
+    @media(min-width: 980px){ .split { grid-template-columns: 1.15fr .85fr; align-items: start; } }
+
+    .panel { background: #fff; border: 1px solid #eee; border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+    .panel.dark { background: #111; color: #fff; }
+
+    ul.bullets { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    ul.bullets li { position: relative; padding-left: 28px; }
+    ul.bullets li:before { content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 14px; border-radius: 3px; background: var(--accent); }
+
+    /* Gallery tiles */
+    .tiles { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+    @media(min-width: 740px){ .tiles { grid-template-columns: repeat(3, 1fr); } }
+    .tile { aspect-ratio: 16/11; background: #ddd; border-radius: 6px; overflow: hidden; }
+    .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Contact band */
+    .band { background: #fff; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 30px 0; }
+    .band .inner { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; display: grid; gap: 24px; grid-template-columns: 1fr; }
+    @media(min-width: 980px){ .band .inner { grid-template-columns: 1fr 1fr; align-items: start; } }
+
+    /* Contact form */
+    form.contact { display: grid; gap: 12px; background: #fafafa; border: 1px solid #eee; padding: 16px; border-radius: var(--radius); }
+    .row { display: grid; gap: 12px; grid-template-columns: 1fr; }
+    @media(min-width: 640px){ .row { grid-template-columns: 1fr 1fr; } }
+    label { font-weight: 600; font-size: 13px; }
+    input, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-family: inherit; }
+    textarea { min-height: 140px; }
+    .small { color: var(--muted); font-size: 12px; }
+
+    /* Floating Action Bar (sticky) */
+    .fab { position: fixed; right: 14px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; z-index: 999; }
+    .fab a { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: #111; color: #fff; text-decoration: none; border: 1px solid #000; box-shadow: var(--shadow); }
+    .fab a:hover { background: #000; }
+    .fab svg { width: 22px; height: 22px; }
+
+    footer { background: #fff; color: var(--muted); border-top: 1px solid #eee; padding: 24px 20px; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a href="#" class="logo" aria-label="plastr home">
+        <!-- Use SVG for crisp scaling -->
+        <img src="assets/logo-horizontal.svg" alt="plastr — Interior Linings" height="36" />
+      </a>
+      <nav>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sticky contact bar -->
+  <aside class="fab" aria-label="Quick contact">
+    <a href="tel:+61XXXXXXXXX" aria-label="call plastr">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 4.18 2 2 0 0 1 5.11 2h3a2 2 0 0 1 2 1.72 12.4 12.4 0 0 0 .7 2.57 2 2 0 0 1-.45 2.11L9 9a16 16 0 0 0 6 6l.6-1.35a2 2 0 0 1 2.11-.45 12.4 12.4 0 0 0 2.57.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+    <a href="mailto:plastr@outlook.com?subject=Quote%20Request%20—%20Plastr" aria-label="email plastr">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+    </a>
+    <a href="https://instagram.com/drywallgangsters" target="_blank" rel="noopener" aria-label="Drywall Gangsters on Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+  </aside>
+
+  <section class="hero">
+    <div class="eyebrow">With proven craftsmanship across SEQ</div>
+    <h2>Plastering Suppliers & Finishers</h2>
+    <p>From Sunshine Coast to South Brisbane — new builds and renovations. Family-owned by brothers Andrej & Dejan (DJ), known online as @drywallgangsters.</p>
+    <div class="actions">
+      <a href="tel:+61XXXXXXXXX" class="btn btn--solid">call plastr</a>
+      <a href="#work" class="btn btn--outline">View Gallery</a>
+    </div>
+  </section>
+
+  <section id="about" class="split">
+    <article class="panel">
+      <h3>About Us</h3>
+      <p>plastr is a family-owned plastering business founded by brothers <strong>Andrej</strong> and <strong>Dejan (DJ)</strong>. Known online as the <strong>@drywallgangsters</strong>, they’ve built more than just a following; they’ve built a reputation across South East Queensland for precision plastering, flawless finishes and no shortcuts.</p>
+      <p>We deliver end-to-end plastering solutions for <strong>new builds</strong> and <strong>renovations</strong>, ensuring every stage of your project is handled with care and expertise.</p>
+    </article>
+    <aside class="panel dark">
+      <!-- Stacked SVG mark -->
+      <img src="assets/logo-mark.svg" alt="plastr mark" style="height:120px; width:auto; display:block; margin: 6px 0 16px;">
+      <h3 style="margin-top:0">Why Choose plastr?</h3>
+      <ul class="bullets">
+        <li><strong>Family Owned & Operated</strong> – Andrej & DJ bring their shared passion, skill and attention to detail into every project.</li>
+        <li><strong>Skilled & Approachable</strong> – Professional, straightforward and easy to work with.</li>
+        <li><strong>Every Job Done Right</strong> – From walls and ceilings to detailed finishes, every line, joint and curve is completed with pride.</li>
+        <li><strong>Communication You Can Count On</strong> – Clear updates, no surprises and honest advice.</li>
+        <li><strong>Tidy from Start to Finish</strong> – Sites are left as clean as the finished walls.</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section id="work">
+    <h3>Our Work</h3>
+    <p>Browse a selection of recent projects. Replace placeholders below with job photos.</p>
+    <div class="tiles">
+      <div class="tile"><img src="assets/gallery-1.jpg" alt="Project 1"></div>
+      <div class="tile"><img src="assets/gallery-2.jpg" alt="Project 2"></div>
+      <div class="tile"><img src="assets/gallery-3.jpg" alt="Project 3"></div>
+      <div class="tile"><img src="assets/gallery-4.jpg" alt="Project 4"></div>
+      <div class="tile"><img src="assets/gallery-5.jpg" alt="Project 5"></div>
+      <div class="tile"><img src="assets/gallery-6.jpg" alt="Project 6"></div>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="inner">
+      <div>
+        <h3>Ready to Build with Us?</h3>
+        <p>Plastering isn’t just about walls — it’s about creating the foundation for every room that follows. With plastr, you’re choosing quality, trust and a finish you’ll notice every day.</p>
+        <p class="small">Prefer email or phone? <a href="mailto:plastr@outlook.com">plastr@outlook.com</a> • <a href="tel:+61406870707">+61&nbsp;406870707</a></p>
+      </div>
+      <!-- Netlify-ready form with Formspree fallback -->
+      <!-- OPTION A (Netlify): keep action="" and include data-netlify + hidden input. When deployed on Netlify, submissions are captured. -->
+      <!-- OPTION B (Formspree): set action="https://formspree.io/f/YOUR_ID" to send to Formspree. -->
+      <form class="contact" name="contact" method="POST" action="" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none">
+          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
+        <div class="row">
+          <label>Full name
+            <input type="text" name="name" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" required>
+          </label>
+        </div>
+        <div class="row">
+          <label>Phone
+            <input type="tel" name="phone" placeholder="04xx xxx xxx">
+          </label>
+          <label>Location (suburb)
+            <input type="text" name="suburb">
+          </label>
+        </div>
+        <label>Project details
+          <textarea name="message" placeholder="New build or renovation? Timeframe?" required></textarea>
+        </label>
+        <div class="actions">
+          <button class="btn btn--solid" type="submit">Send enquiry</button>
+        </div>
+        <div class="small">Your details are used only to contact you about your enquiry.</div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>Service area: Sunshine Coast → South Brisbane • © <span id="year"></span> plastr. All rights reserved.</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html
